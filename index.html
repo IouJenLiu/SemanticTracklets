@@ -15,16 +15,16 @@
 		<div id="intro" style="width: 100%; padding:40px; text-align:center;">
 	        <h1>Semantic Tracklets: An Object-Centric Representation <br> for Visual Multi-Agent Reinforcement Learning</h1>
 	    </div>
-		<!--<div class="container">
+		<div class="container">
 		  <div class="row">
 		    <div class="col-sm">
-		      <a href="https://ioujenliu.github.io/"><h4> Iou-Jen Liu </h4></a>    
+		      <a href="https://ioujenliu.github.io/"><h4> Iou-Jen Liu* </h4></a>    
 		    </div>
 		    <div class="col-sm">
-		      <a href="https://unnat.github.io/"><h4> Zhongzheng Ren</h4></a> 
+		      <a href="https://jason718.github.io/"><h4> Zhongzheng Ren* </h4></a> 
 		    </div>
 		    <div class="col-sm">
-		      <a href="https://raymondyeh07.github.io/"><h4> Raymond A. Yeh</h4></a> 
+		      <a href="https://raymondyeh07.github.io/"><h4> Raymond A. Yeh* </h4></a> 
 		    </div>
 		    <div class="col-sm">
 		      <a href="http://www.alexander-schwing.de/"><h4> Alexander G. Schwing </h4></a> 
@@ -38,16 +38,14 @@
 		  </div>
 		  <div class="row">
 		  	<div class="col-lg">
-		   	<h4> International Conference on Machine Learning (ICML), 2021 </h4>
+		   	<h4> International Conference on Intelligent Robots and Systems (IROS), 2021 </h4>
 		    </div>
 		  </div>
 		  
 		  <div class="row">
 		  			    <div class="col-lg">
 		    <center><h2><strong>
-	<a href="http://proceedings.mlr.press/v139/liu21j/liu21j.pdf">Paper</a> |
-	<a href="https://github.com/IouJenLiu/CMAE">Code</a> |
-	<a href="./files/talk_slides.pdf">Slides</a> |
+	<a href="./files/semantic_tracklets_iros21.pdf">Paper</a> |
     <a href="./files/bib.txt">Bibtex</a> </strong> </h2></center> 
 			</div>
 		  </div>
@@ -55,7 +53,7 @@
 		  
 		  <div class="row">
 		  	<div class="col-lg">
-		  	<img src="./files/flow.png" class="img-fluid" style="width:509px;height:400px;">
+		  	<img src="./files/pipeline.jpg" class="img-fluid" style="width:900px;">
 		  	</div>
 		  </div>
 
@@ -67,25 +65,95 @@
 		  </div>
 		  <div class="row">
 		  	<div style="font-size:16px"><p align="justify">
-		  		Exploration is critical for good results in deep reinforcement learning and has attracted much attention. However, existing multi-agent deep reinforcement learning algorithms still use mostly
-				noise-based techniques. Very recently, exploration methods that consider cooperation among
-				multiple agents have been developed. However,
-				existing methods suffer from a common challenge: agents struggle to identify states that are
-				worth exploring, and hardly coordinate exploration efforts toward those states. To address
-				this shortcoming, in this paper, we propose cooperative multi-agent exploration (CMAE): agents
-				share a common goal while exploring. The goal
-				is selected from multiple projected state spaces
-				via a normalized entropy-based technique. Then,
-				agents are trained to reach this goal in a coordinated manner. We demonstrate that CMAE
-				consistently outperforms baselines on various
-				tasks, including a sparse-reward version of the
-				multiple-particle environment (MPE) and the
-				Starcraft multi-agent challenge (SMAC).
+		  		Solving complex real-world tasks, e.g., autonomous fleet control, often involves a coordinated team
+				of multiple agents which learn strategies from visual inputs
+				via reinforcement learning. Many existing multi-agent reinforcement learning (MARL) algorithms however don’t scale
+				to environments where agents operate on visual inputs. To
+				address this issue, algorithmically, recent works have focused
+				on non-stationarity and exploration. In contrast, we study
+				whether scalability can also be achieved via a disentangled
+				representation. For this, we explicitly construct an objectcentric intermediate representation to characterize the states of
+				an environment, which we refer to as ‘semantic tracklets.’ We
+				evaluate ‘semantic tracklets’ on the visual multi-agent particle
+				environment (VMPE) and on the challenging visual multiagent GFootball environment. ‘Semantic tracklets’ consistently
+				outperform baselines on VMPE, and achieve a +2.4 higher
+				score difference than baselines on GFootball. Notably, this
+				method is the first to successfully learn a strategy for five players
+				in the GFootball environment using only visual data. 
 		  	</p>
 		  	</div>
 		  </div>
 
 		  <br><br>
+
+		  <div class="row">
+		  	<div class="col-lg">
+		  		<h2>Videos: Qualitative results for GFootball 11 vs. 11 (N=5)</h2>
+
+		   
+
+			
+
+			<div class="content">Following the visualization scheme in the main paper, we highlight the ball in <font color="#F8DDA3"><b>yellow</b></font>. The videos are best viewed in full-screen mode. </div>
+
+
+
+			<div class="content">We visualize the policy learned by our approach in the GFootball 11 vs. 11 game controlling five agents.</div>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/five_agents/5_1.mp4" width="420" height="260">
+
+			</video>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/five_agents/5_2.mp4" width="420" height="260">
+
+			</video>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/five_agents/5_4.mp4" width="420" height="260">
+
+			</video>
+			 </div>
+		  	</div>
+			<div><br>
+
+			</div>
+			<div class="row">
+		  	<div class="col-lg">
+		  		<h2>Videos: Qualitative results for GFootball 11 vs. 11 (N=3)</h2>
+
+
+			<div class="content">We visualize the policy learned by our approach in the GFootball 11 vs. 11 game controlling three agents.</div>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/three_agents/3_1.mp4" width="420" height="260">
+
+			</video>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/three_agents/3_2.mp4" width="420" height="260">
+
+			</video>
+
+			<video id="vid" controls="controls" onended="this.currentTime = 0; this.play();"
+
+				   src="video/three_agents/3_3.mp4" width="420" height="260">
+
+			</video>
+			 </div>
+		  	</div>
+
+
+		  	<br><br>
+
+
+		  	<!--
 		  <div class="row">
 		  	<div class="col-sm">
 		  		<h2> Materials </h2><p></p>
@@ -131,14 +199,25 @@
 		  </div>
 
           <br><br>
+		-->
+         
+
+
+
+
+
+
+
+
+
 		  <div class="row">
 		  	<div class="col-sm">
 		  		<h2> Citation </h2>
 		  		    <pre align="left">
-@inproceedings{LiuICML2021,
-  author = {I.-J. Liu and U. Jain and R.~A. Yeh and A.~G. Schwing},
-  title = {{Cooperative Exploration for Multi-Agent Deep Reinforcement Learning}},
-  booktitle = {Proc. ICML},
+@inproceedings{LiuIROS2021,
+  author = {I.-J. Liu and Zhongzheng Ren and Raymond A. Yeh and Alexander G. Schwing},
+  title = {{Semantic Tracklets: An Object-Centric Representation for Visual Multi-Agent Reinforcement Learning}},
+  booktitle = {Proc. IROS},
   year = {2021},
 }
 </pre>
@@ -165,6 +244,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-   -->
+   
   </body>
 </html>

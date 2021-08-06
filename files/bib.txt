@@ -1,0 +1,6 @@
+@inproceedings{LiuIROS2021,
+  author = {I.-J. Liu and Zhongzheng Ren and Raymond A. Yeh and Alexander G. Schwing},
+  title = {{Semantic Tracklets: An Object-Centric Representation for Visual Multi-Agent Reinforcement Learning}},
+  booktitle = {Proc. IROS},
+  year = {2021},
+}
